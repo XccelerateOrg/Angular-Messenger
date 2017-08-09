@@ -1,14 +1,30 @@
 <div class="container">
-    <app-cockpit
-        (messageSend) = "onMessageSent($event)"
-    ></app-cockpit>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Send and reply to messages!</p>
+      <label>Message Sender</label>
+      <input type="text" class="form-control" [(ngModel)]="messageSender">
+      <label>Message Content</label>
+      <input type="text" class="form-control" [(ngModel)]="messageContent">
+      <br>
+      <button
+        class="btn btn-primary col-md-6"
+        (click)="onSendMessage()">Send Message</button>
+    </div>
+  </div>
   <hr>
   <div class="row">
-    <input type="text" [(ngModel)]="term" />
     <div class="col-xs-12">
-        <app-message
-        *ngFor="let message of messages"
-        [msg]="message"></app-message>
+      <div
+        class="panel panel-default"
+        *ngFor="let message of messages">
+        <div class="panel-heading">{{ message.sender }} at {{ message.received }}</div>
+        <div class="panel-body">
+          <p>
+            <strong>{{ message.content }}</strong>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
