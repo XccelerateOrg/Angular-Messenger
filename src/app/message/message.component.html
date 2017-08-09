@@ -1,3 +1,9 @@
-<p>
-  message works!
-</p>
+<div
+  class="panel panel-default">
+  <div class="panel-heading">{{ message.sender }}</div>
+  <div class="panel-body">
+    <p>
+      <strong *ngIf="message.type === 'send'">{{ message.content }}</strong>
+    </p>
+  </div>
+</div>
