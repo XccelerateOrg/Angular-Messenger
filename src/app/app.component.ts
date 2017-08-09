@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from './message.model';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  messages = [];
+  messages: Message[] = [ ];
   constructor(){ }
 
   ngOnInit() {
   }
 
   onMessageSent(messageData: {sender: string, content: string}) {
-      this.messages.push({
-          type: 'send',
-          sender: messageData.sender,
-          content: messageData.content
-      })
+      this.messages.push(new Message(messageData.content, messageData.sender, new Date()))
   }
 
 }
