@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   onMessageSent(messageData: {sender: string, content: string}) {
       this.messages.push({
-          type: 'send',
           sender: messageData.sender,
           content: messageData.content
       })
