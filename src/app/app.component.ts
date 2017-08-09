@@ -12,7 +12,6 @@ export class AppComponent {
 
   onSendMessage() {
     this.messages.push({
-      type: 'message',
       sender: this.messageSender,
       content: this.messageContent
     });
