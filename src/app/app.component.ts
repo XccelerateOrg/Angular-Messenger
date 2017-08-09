@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  messages = [];
+  messageSender = '';
+  messageContent = '';
+
+  onSendMessage() {
+    this.messages.push({
+      type: 'message',
+      sender: this.messageSender,
+      content: this.messageContent
+    });
+  }
 }
