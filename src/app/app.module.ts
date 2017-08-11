@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { MessageComponent } from './message/message.component';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CockpitComponent,
-    MessageComponent
+    MessageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { Message } from './message.model';
 })
 export class AppComponent implements OnInit {
   messages: Message[] = [ ];
+  term = '';
   constructor(){ }
 
   ngOnInit() {
