@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Message } from './message.model';
 import { ServerService } from './server.service';
 
+=======
+>>>>>>> 07-routing
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,7 @@ import { ServerService } from './server.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+<<<<<<< HEAD
   messages: Message[] = [ ];
   term = '';
   constructor(private serverService: ServerService){ }
@@ -33,6 +37,10 @@ export class AppComponent implements OnInit {
             (error) => console.log(error)
         )
   }
+=======
+    constructor() {}
+    ngOnInit(){}
+>>>>>>> 07-routing
 
 
 }

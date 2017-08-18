@@ -1,0 +1,14 @@
+<div>
+    <app-cockpit
+    (messageSend) = "onMessageSent($event)"
+    ></app-cockpit>
+    <hr>
+    <input type="text" [(ngModel)]="term"  class="form-control" placeholder="Search for messages"/>
+    <div class="row">
+        <div class="col-xs-12">
+            <app-message
+            *ngFor="let message of messages | filter:term"
+            [msg]="message"></app-message>
+        </div>
+    </div>
+</div>
