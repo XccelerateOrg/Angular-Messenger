@@ -13,6 +13,8 @@ import { MessengerComponent } from './messenger/messenger.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServerService],
+  providers: [ServerService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
 
-    constructor() {}
-    ngOnInit(){}
+    constructor(private authService: AuthService) {}
+    ngOnInit(){
+        firebase.initializeApp({
+            apiKey: "AIzaSyBqvtrcq7KJRYrzzHmrdkN9nTi8fAdepR8",
+            authDomain: "accelerate-ng.firebaseapp.com"
+        });
+    }
 
+    logOut() {
+        this.authService.logOut();
+    }
 
 }

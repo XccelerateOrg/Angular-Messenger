@@ -1,3 +1,39 @@
 <h1>
   Welcome to the future of messaging!
 </h1>
+
+<button class="btn  {{loginbtn}}" (click)="buttonClickLogIn($event)">LogIn</button>
+<button class="btn  {{signupbtn}}" (click)="buttonClickSignUp($event)">SignUp</button>
+
+<div *ngIf="selectedLogin; else signUp" >
+    <form #messageForm="ngForm" (ngSubmit)="onLogIn(messageForm.value)" ngNativeValidate>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control" #senderRef="ngModel" ngModel name="email" required />
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" class="form-control" #messageRef="ngModel" ngModel name="password" minlength="6"  required />
+        </div>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+
+</div>
+
+<ng-template #signUp>
+    <div>
+        <form #messageForm="ngForm" (ngSubmit)="onSignUp(messageForm.value)" ngNativeValidate>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control" #senderRef="ngModel" ngModel name="email" required />
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" #messageRef="ngModel" ngModel name="password" minlength="6"  required />
+            </div>
+            <input type="submit" class="btn btn-primary" />
+        </form>
+    </div>
+
+
+</ng-template>

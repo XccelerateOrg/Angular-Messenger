@@ -4,6 +4,9 @@
             <a routerLink='/' class="btn btn-default"> Home </a>
             <a routerLink='/messenger' class="btn btn-default">Messenger</a>
         </div>
+        <div class="navbar-right" *ngIf="authService.isAuthenticated()">
+            <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+        </div>
     </nav>
 
 
