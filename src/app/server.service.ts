@@ -12,7 +12,8 @@ export class ServerService {
                 private authService: AuthService) {}
 
     storeMessage(messages: any[]) {
-        return this.http.put('https://accelerate-ng.firebaseio.com/messages.json', messages);
+        const token = this.authService.getToken();
+        return this.http.put('https://accelerate-ng.firebaseio.com/messages.json?auth='+token, messages);
     }
 
     retrieveMessages() {

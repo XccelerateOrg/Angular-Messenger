@@ -29,12 +29,10 @@ export class HomeComponent implements OnInit {
   }
 
   onSignUp(details: {email: string, password: string}) {
-      console.log(details);
       this.authService.signUp(details.email, details.password);
   }
 
   onLogIn(details: {email: string, password: string}) {
-      console.log(details);
       this.authService.logIn(details.email, details.password);
   }
 }
